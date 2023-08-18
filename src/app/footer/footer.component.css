@@ -1,0 +1,36 @@
+
+#footer-info-container {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 0px;
+}
+
+#footer-info-container p {
+  margin: 0 auto;
+}
+
+div {
+  background-color: #472C4C;
+  color: #FFFFFF;
+  padding: 20px 0;
+  text-align: center;
+
+}
+
+#footer-info-container {
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.row2{
+  background-color: #36013F;
+  color: #FFFFFF;
+}
+#copyright{
+  background-color: #36013F;
+  color: #FFFFFF;
+}
+

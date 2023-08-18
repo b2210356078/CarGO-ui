@@ -1,0 +1,97 @@
+<section class="gradient-custom">
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 ">
+
+
+            <div class="mb-md-5 mt-md-4 pb-5">
+              <h2 class="fw-bold mb-2 text-uppercase">Sign Up</h2>
+              <p class="text-white-50 mb-5">Please enter your information!</p>
+
+              <div class="form"
+              >
+                <div class=" form-group">
+
+                  <div class="form-outline form-white mb-4">
+                    <input [(ngModel)]="user.name"  type="name" id="typeNameX" class="form-control form-control-lg" />
+                    <label class="form-label" for="typeNameX">Name</label>
+
+                  </div>
+
+                  <div class="form-outline form-white mb-4">
+                    <input  [(ngModel)]= "user.lastName" type="lastName" id="typelastNameX" class="form-control form-control-lg" />
+                    <label class="form-label" for="typelastNameX">Last Name</label>
+                  </div>
+
+                  <div class="form-outline form-white mb-4">
+                    <input  [(ngModel)]="user.identityNumber"  type="identityNumber" id="typeIdentityNumberX" class="form-control form-control-lg" />
+                    <label class="form-label" for="typeIdentityNumberX">Identity Number</label>
+                  </div>
+
+                  <div class="form-outline form-white mb-4">
+                    <input  [(ngModel)]="user.phone"  type="phone" id="typePhoneX" class="form-control form-control-lg" />
+                    <label class="form-label" for="typePhoneX">Phone</label>
+                  </div>
+
+                  <div class="form-outline form-white mb-4">
+                    <input  [(ngModel)]="user.email"  type="email" id="typeEmailX" class="form-control form-control-lg" />
+                    <label class="form-label" for="typeEmailX">Email</label>
+                  </div>
+
+                  <div class="form-outline form-white mb-4">
+                    <input  [(ngModel)]="user.password" type="password" id="typePasswordX" class="form-control form-control-lg"   />
+                    <label class="form-label" for="typePasswordX">Password</label>
+                  </div>
+                  <br>
+                  <br>
+                  <div class="form-outline form-white mb-4">
+                    <input [(ngModel)]="cpassword"
+                           id="typeConfirmPasswordX" class="form-control form-control-lg"  />
+                    <label class="form-label" for="typeConfirmPasswordX">Confirm Passord</label>
+                  </div>
+                  <br>
+                  <button *ngIf="!verifyCodeEntry" (click)="signUp()"   class="btn btn-outline-light btn-lg px-5">Sign Up</button>
+                  <!-- Button trigger modal -->
+                  <button *ngIf="verifyCodeEntry"  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Doğrulama kodu giriniz
+                  </button>
+
+                </div>
+
+                <div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Doğrulama Kodu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input class="form-control form-control-lg"  [(ngModel)]="user.verifyCode"  >
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" (click)="sendVerifyCode()" class="btn btn-primary">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
